@@ -20,3 +20,5 @@
 2023.01.28 file 예제3 학습완료  
 2023.01.29 binary file 예제 학습중  
 2023.01.30 binary file 예제 학습완료  
+2023.01.3q binary file 예제2 학습중  
+
