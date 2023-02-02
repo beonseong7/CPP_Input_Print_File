@@ -67,4 +67,30 @@ int main()
 		<< setprecision(2) << setw(6) << pl.g << endl;
 	if (finout.eof())
 		finout.clear();
+	cout << "행성의 이름을 입력하십시오: ";
+	cin.get(pl.name, LIM);
+	eatline();
+	cout << "행성의 인구를 입력하십시오: ";
+	cin >> pl.population;
+	cout << "행성의 중력가속도를 입력하십시오: ";
+	cin >> pl.g;
+	finout.seekp(place);
+	finout.write((char*)&pl, sizeof pl) << flush;
+	if (finout.fail())
+	{
+		cerr << "쓰다가 에러 발생.\n";
+		exit(EXIT_FAILURE);
+	}
+	ct = 0;
+	finout.seekg(0);
+	cout << file << "파일의 개정된 내용은 다음과 같습니다:\n";
+	while (finout.read((char*)&pl, sizeof pl))
+	{
+		cout << ct++ << ": " << setw(LIM) << pl.name << ": "
+			<< setprecision(0) << setw(12) << pl.population
+			<< setprecision(2) << setw(6) << pl.g << endl;
+	}
+	finout.close();
+	cout << "프로그램을 종료합니다.\n";
+	return 0;
 }
