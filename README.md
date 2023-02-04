@@ -24,3 +24,4 @@
 2023.02.01 binary file 예제2 학습중  
 2023.02.02 binary file 예제2 학습완료  
 2023.02.03 outstr 예제 학습완료  
+2023.02.03 istringstream 예제 학습완료  
